@@ -1,0 +1,88 @@
+﻿@model ProjectManagerUI.ViewModels.ProjectTaskViewModel
+
+@{
+    ViewBag.Title = "ProjectTaskByStatus";
+    var Count = 0;
+    var CompletedTask = 0;
+    var PendingTask = 0;
+}
+
+<h1>Project Details</h1>
+
+<p>ProjectId : @Model.ProjectId </p>
+<p>ProjectTitle  : @Model.ProjectTitle</p>
+<p>ProjectStartDate : @Model.ProjectStartDate </p>
+<p>ProjectEndDate  : @Model.ProjectEndDate</p>
+<p>EmployeeId : @Model.EmployeeId </p>
+
+@foreach (var item in Model.Tasks)
+{
+    Count++;
+    if (item.TaskStatus == "completed")
+    {
+        CompletedTask++;
+    }
+    if (item.TaskStatus == "pending")
+    {
+        PendingTask++;
+    }
+}
+<p>Total number of tasks in @Model.ProjectTitle are : @Count</p>
+<p>Completed tasks are: @CompletedTask</p>
+<p>pending tasks are: @PendingTask</p>
+<h2>View Task Report</h2>
+@*@{
+        Html.Partial("_ViewPendingTasks");
+    }*@
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div class="form-group">
+    <div class="col-md-10">
+        <input type="button" value="Pending" id="pending" />
+        <input type="button" value="Completed" id="completed" />
+        <input type="button" value="Total Task" id="totaltask" />
+    </div>
+</div>
+
+
+
+
+
+@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+           
+            $('#pending').on('click', function () {
+                $('#div2').empty();
+                $('#div3').empty();
+                var url = '/task/ViewPendingTasks';
+                $.get(url, function (data) {
+                    $('#div1').html(data);
+                });
+            });
+            $('#completed').on('click', function () {
+                $('#div1').empty();
+                $('#div3').empty();
+                var url = '/task/ViewCompletedTasks';
+                $.get(url, function (data) {
+                    $('#div2').html(data);
+                });
+
+            });
+            $('#totaltask').on('click', function () {
+                $('#div2').empty();
+                $('#div1').empty();
+                var url = '/task/ViewTotalTasks';
+                $.get(url, function (data) {
+                    $('#div3').html(data);
+                });
+
+            });
+        });
+    </script>
+}

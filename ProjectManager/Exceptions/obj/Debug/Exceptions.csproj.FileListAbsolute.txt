@@ -1,0 +1,16 @@
+D:\ProjectManager\Exceptions\bin\Debug\Exceptions.dll
+D:\ProjectManager\Exceptions\bin\Debug\Exceptions.pdb
+D:\ProjectManager\Exceptions\obj\Debug\Exceptions.csprojAssemblyReference.cache
+D:\ProjectManager\Exceptions\obj\Debug\Exceptions.csproj.CoreCompileInputs.cache
+D:\ProjectManager\Exceptions\obj\Debug\Exceptions.dll
+D:\ProjectManager\Exceptions\obj\Debug\Exceptions.pdb
+C:\Users\Administrator\Desktop\ProjectM\ProjectManager\Exceptions\bin\Debug\Exceptions.dll
+C:\Users\Administrator\Desktop\ProjectM\ProjectManager\Exceptions\bin\Debug\Exceptions.pdb
+C:\Users\Administrator\Desktop\ProjectM\ProjectManager\Exceptions\obj\Debug\Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\ProjectM\ProjectManager\Exceptions\obj\Debug\Exceptions.dll
+C:\Users\Administrator\Desktop\ProjectM\ProjectManager\Exceptions\obj\Debug\Exceptions.pdb
+C:\Users\Administrator\Desktop\doneproject\ProjectManager\Exceptions\bin\Debug\Exceptions.dll
+C:\Users\Administrator\Desktop\doneproject\ProjectManager\Exceptions\bin\Debug\Exceptions.pdb
+C:\Users\Administrator\Desktop\doneproject\ProjectManager\Exceptions\obj\Debug\Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\doneproject\ProjectManager\Exceptions\obj\Debug\Exceptions.dll
+C:\Users\Administrator\Desktop\doneproject\ProjectManager\Exceptions\obj\Debug\Exceptions.pdb

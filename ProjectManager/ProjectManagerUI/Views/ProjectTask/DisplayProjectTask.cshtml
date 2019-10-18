@@ -1,0 +1,82 @@
+﻿@model ProjectManagerUI.ViewModels.ProjectTaskViewModel
+
+@{
+    ViewBag.Title = "DisplayProjectTask";
+    var Count = 0;
+}
+
+<h1>Project Details</h1>
+
+<p>ProjectId : @Model.ProjectId </p>
+<p>ProjectTitle  : @Model.ProjectTitle</p>
+<p>ProjectStartDate : @Model.ProjectStartDate </p>
+<p>ProjectEndDate  : @Model.ProjectEndDate</p>
+<p>EmployeeId : @Model.EmployeeId </p>
+
+@foreach (var item in Model.Tasks)
+{
+    Count++;
+}
+<p>Total number of tasks in @Model.ProjectTitle are : @Count</p>
+
+@Html.ActionLink("Add Tasks", "AddTask", "ProjectTask", new { id = Model.ProjectId }, null)
+
+<h1>All Tasks are</h1>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskPriority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.TaskStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.ProjectId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.EmployeeId)
+        </th>
+    </tr>
+    @foreach (var item in Model.Tasks)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TaskId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TaskStartDate.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TaskEndDate.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TaskPriority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.TaskStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => @item.EmployeeId)
+            </td>
+
+        </tr>
+    }
+</table>
